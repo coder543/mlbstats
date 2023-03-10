@@ -15,6 +15,12 @@ go build
 
 This will start the proxy server listening on port 8080.
 
+In a separate terminal, an example of a valid request would look like this:
+
+```bash
+curl 'http://localhost:8080/api/v1/schedule?date=2022-10-04&teamId=115'
+```
+
 `mlbstats` takes a couple of optional parameters:
 
 ```
