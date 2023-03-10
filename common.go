@@ -13,6 +13,14 @@ type Identifiable struct {
 	Abbreviation string `json:"abbreviation,omitempty"`
 }
 
+var headersToProxy = map[string]bool{
+	"Content-Type":           true,
+	"Cache-Control":          true,
+	"X-Content-Type-Options": true,
+	"X-Frame-Options":        true,
+	"X-Xss-Protection":       true,
+}
+
 type ErrResponse struct {
 	Reason string `json:"reason"`
 }

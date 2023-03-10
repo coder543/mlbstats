@@ -54,10 +54,14 @@ func main() {
 			return
 		}
 
-		// TODO: more efficient way?
+		// Since we are proxying the request from upstream, it is helpful to
+		// also proxy certain headers from the original response, which lets
+		// us borrow the upstream Cache-Control policy and other things.
 		writeHeader := w.Header()
 		for k, v := range header {
-			writeHeader[k] = v
+			if headersToProxy[k] {
+				writeHeader[k] = v
+			}
 		}
 
 		_, err = w.Write(marshalled)
