@@ -20,7 +20,7 @@ func main() {
 		GetUpstreamSchedule = GetUpstreamScheduleMock
 	}
 
-	http.HandleFunc("/schedule", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/api/v1/schedule", func(w http.ResponseWriter, r *http.Request) {
 		// take in two parameters: date and teamId
 		date := r.URL.Query().Get("date")
 		teamIDStr := r.URL.Query().Get("teamId")
