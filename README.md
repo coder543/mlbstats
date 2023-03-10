@@ -36,3 +36,7 @@ If you supply `-mock`, then it will read `schedule.json` from the current workin
 ## Tests
 
 To run the built-in tests, simply run `go test ./...` from the root of the repo.
+
+## TODO
+
+`GameStatusInProgress` is currently just using a value that I selected, but it would be good to figure out what the MLB `statsapi` actually returns for the `StatusCode` when the game is in progress, and update this constant.
